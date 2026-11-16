@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Recruiting Profile | GlobalRecruit Hub</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/">GlobalRecruit Hub</a>
+    <nav aria-label="Account navigation"><a href="/dashboard.html">Dashboard</a></nav>
+  </header>
+  <main class="auth-container" hidden id="profile-page">
+    <section class="auth-card">
+      <span class="tag">Athlete profile</span>
+      <h1>Your recruiting details</h1>
+      <p>Save the details you want to reuse in recruiting materials.</p>
+      <form id="profile-form">
+        <label for="full_name">Full name</label><input id="full_name" required maxlength="150" autocomplete="name">
+        <label for="country">Country</label><input id="country" required maxlength="100" autocomplete="country-name">
+        <label for="sport">Sport</label><input id="sport" required maxlength="100">
+        <label for="position">Position</label><input id="position" required maxlength="100">
+        <label for="academic_context">Academic context (school, major, or achievements)</label><textarea id="academic_context" maxlength="300" rows="3"></textarea>
+        <p class="form-help">Include a GPA or academic context.</p>
+        <label for="gpa">GPA (optional, 0–4)</label><input id="gpa" type="number" min="0" max="4" step="0.01">
+        <label for="graduation_year">Graduation or enrollment year</label><input id="graduation_year" type="number" min="2016" max="2041" step="1" required>
+        <label for="highlight_url">Highlights link (optional, HTTPS)</label><input id="highlight_url" type="url" maxlength="2048" placeholder="https://example.com/highlights">
+        <p id="profile-message" class="form-message" role="status" aria-live="polite"></p>
+        <button type="submit" class="button form-button">Save profile</button>
+      </form>
+    </section>
+  </main>
+  <script src="/js/profile.js" defer></script>
+</body>
+</html>

@@ -22,3 +22,7 @@ Login and registration share a limit of 20 requests per IP per 15 minutes. The l
 Run `npm test -- --coverage` for the complete suite. Tests use mocked database operations and in-memory sessions, with no Neon credentials or database changes. HTTP integration tests exercise the real Express middleware stack and require permission to connect to localhost. Controller, model, and security middleware tests run without opening sockets.
 
 GitHub Actions runs the full suite on pull requests and authentication branch pushes. Deployment smoke tests must still confirm production database sessions, HTTPS cookies, register/login/logout, and protected API access before GH-1 is marked Done.
+
+## Athlete profile
+
+After signing in, open `/profile.html` from the dashboard. `GET /api/profile` retrieves the current athlete's saved details and `PUT /api/profile` creates or updates them. Both routes require a session and derive ownership from it. Run the migrations on an isolated Neon branch before testing profile persistence. The second migration creates the athlete-owned profile table; the migration script applies numbered SQL files in order.

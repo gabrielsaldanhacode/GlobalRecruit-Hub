@@ -9,18 +9,15 @@ async function runMigration() {
   const client = await pool.connect();
 
   try {
-    const filePath = path.join(
-      __dirname,
-      "../migrations/001_create_athletes.sql"
-    );
-
-    const sql = fs.readFileSync(filePath, "utf8");
-
     await client.query("BEGIN");
-    await client.query(sql);
+    const directory = path.join(__dirname, "../migrations");
+    const files = fs.readdirSync(directory).filter(file => /^\d+_.*\.sql$/.test(file)).sort();
+    for (const file of files) {
+      await client.query(fs.readFileSync(path.join(directory, file), "utf8"));
+    }
     await client.query("COMMIT");
 
-    console.log("Athletes table migration completed!");
+    console.log("Database migrations completed!");
   } catch (error) {
     await client.query("ROLLBACK");
     console.error("Migration failed:", error.message);
