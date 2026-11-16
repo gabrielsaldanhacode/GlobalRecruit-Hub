@@ -30,3 +30,7 @@ After signing in, open `/profile.html` from the dashboard. `GET /api/profile` re
 ## Coach directory
 
 Open `/coaches.html` from the dashboard. The directory contains five manually checked men's soccer contacts from official athletics pages, each with a source link and review date. `GET /api/coaches?q=` searches coach names and schools. Contact information is a snapshot; recheck the official source before outreach. Edit `src/data/coaches.js` only after checking the official page and updating the review date.
+
+## Recruiting PDF
+
+The dashboard downloads a PDF from `GET /api/recruiting-pdf`. The endpoint requires a session, reads the athlete's saved profile, and returns a helpful 422 error for incomplete required information. The file includes athletic and academic details and a clickable highlight URL when provided. Deploy with dependencies installed from the committed lockfile.

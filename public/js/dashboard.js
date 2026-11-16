@@ -3,6 +3,32 @@ const dashboard = document.querySelector(".dashboard-container");
 const athleteEmail = document.getElementById("athlete-email");
 const logoutButton = document.getElementById("logout-button");
 const dashboardMessage = document.getElementById("dashboard-message");
+const downloadPdf = document.getElementById("download-pdf");
+
+downloadPdf.addEventListener("click", async event => {
+  event.preventDefault();
+  dashboardMessage.textContent = "";
+  try {
+    const response = await fetch(downloadPdf.href, { credentials: "same-origin" });
+    if (response.status === 401) {
+      window.location.replace("/login.html");
+      return;
+    }
+    if (!response.ok) {
+      const data = await response.json();
+      throw new Error(data.error || "Unable to download PDF.");
+    }
+    const url = URL.createObjectURL(await response.blob());
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "recruiting-profile.pdf";
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 60000);
+  } catch (error) {
+    dashboardMessage.textContent = error.message;
+    dashboardMessage.classList.add("error");
+  }
+});
 
 async function loadDashboard() {
   try {
