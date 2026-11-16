@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account | GlobalRecruit Hub</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/">GlobalRecruit Hub</a>
+    <nav aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/login.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="auth-container">
+    <section class="auth-card">
+      <span class="tag">Join GlobalRecruit Hub</span>
+      <h1>Create your athlete account</h1>
+      <p>Start building your college recruiting profile.</p>
+
+      <form id="register-form">
+        <label for="email">Email address</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          maxlength="255"
+          required
+        >
+
+        <label for="password">Password</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          autocomplete="new-password"
+          minlength="8"
+          maxlength="72"
+          required
+        >
+
+        <label for="confirm-password">Confirm password</label>
+        <input
+          id="confirm-password"
+          name="confirmPassword"
+          type="password"
+          autocomplete="new-password"
+          required
+        >
+
+        <p class="form-help">
+          Use a password containing at least 8 characters.
+        </p>
+
+        <p id="form-message" class="form-message"
+           role="status" aria-live="polite"></p>
+
+        <button class="button form-button" type="submit">
+          Create Account
+        </button>
+      </form>
+
+      <p class="auth-footer">
+        Already have an account?
+        <a href="/login.html">Sign in</a>
+      </p>
+    </section>
+  </main>
+
+  <script src="/js/register.js" defer></script>
+</body>
+</html>

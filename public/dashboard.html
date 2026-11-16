@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | GlobalRecruit Hub</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/">GlobalRecruit Hub</a>
+    <nav aria-label="Account navigation">
+      <a href="/">Home</a>
+      <button id="logout-button" class="nav-button" type="button">
+        Log Out
+      </button>
+    </nav>
+  </header>
+
+  <main class="dashboard-container" hidden>
+    <span class="tag">Athlete Dashboard</span>
+    <h1>Welcome to GlobalRecruit Hub</h1>
+    <p id="athlete-email"></p>
+
+    <section class="dashboard-grid">
+      <div class="feature-card">
+        <h2>My Recruiting Profile</h2>
+        <p>Add your athletic and academic information.</p>
+        <span class="coming-soon">Next: GH-2</span>
+      </div>
+
+      <div class="feature-card">
+        <h2>Recruiting PDF</h2>
+        <p>Download your professional athlete resume.</p>
+        <span class="coming-soon">Next: GH-9</span>
+      </div>
+
+      <div class="feature-card">
+        <h2>Find College Coaches</h2>
+        <p>Discover coaching contacts at U.S. colleges.</p>
+        <span class="coming-soon">Next: GH-7</span>
+      </div>
+    </section>
+
+    <p id="dashboard-message" class="form-message"
+       role="status" aria-live="polite"></p>
+  </main>
+
+  <script src="/js/dashboard.js" defer></script>
+</body>
+</html>

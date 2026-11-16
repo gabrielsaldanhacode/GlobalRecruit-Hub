@@ -1,6 +1,6 @@
 
 const request = require("supertest");
-const app = require("../src/app");
+const app = require("./helpers/app");
 
 describe("GlobalRecruit Hub API", () => {
   test("GET /api/health returns a successful response", async () => {
