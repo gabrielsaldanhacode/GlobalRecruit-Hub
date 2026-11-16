@@ -26,3 +26,7 @@ GitHub Actions runs the full suite on pull requests and authentication branch pu
 ## Athlete profile
 
 After signing in, open `/profile.html` from the dashboard. `GET /api/profile` retrieves the current athlete's saved details and `PUT /api/profile` creates or updates them. Both routes require a session and derive ownership from it. Run the migrations on an isolated Neon branch before testing profile persistence. The second migration creates the athlete-owned profile table; the migration script applies numbered SQL files in order.
+
+## Coach directory
+
+Open `/coaches.html` from the dashboard. The directory contains five manually checked men's soccer contacts from official athletics pages, each with a source link and review date. `GET /api/coaches?q=` searches coach names and schools. Contact information is a snapshot; recheck the official source before outreach. Edit `src/data/coaches.js` only after checking the official page and updating the review date.

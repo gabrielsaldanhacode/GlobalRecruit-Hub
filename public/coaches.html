@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Coaches | GlobalRecruit Hub</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header"><a class="logo" href="/">GlobalRecruit Hub</a><nav aria-label="Main navigation"><a href="/dashboard.html">Dashboard</a></nav></header>
+  <main class="dashboard-container">
+    <span class="tag">Verified sources</span>
+    <h1>Find college coaches</h1>
+    <p>These contacts were checked against official athletics pages. Check the linked source again before reaching out.</p>
+    <label for="coach-search">Search by coach or school</label>
+    <input id="coach-search" type="search" maxlength="100" placeholder="Coach name or college">
+    <p id="coach-message" class="form-message" role="status" aria-live="polite"></p>
+    <div id="coach-list" class="dashboard-grid"></div>
+  </main>
+  <script src="/js/coaches.js" defer></script>
+</body>
+</html>
