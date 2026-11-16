@@ -9,6 +9,7 @@ const PgSession = require("connect-pg-simple")(session);
 const pool = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const profileRoutes = require("./routes/profileRoutes");
+const coachRoutes = require("./routes/coachRoutes");
 const { securityHeaders, sameOrigin } = require("./middleware/security");
 
 if (!process.env.SESSION_SECRET || process.env.SESSION_SECRET.length < 32) {
@@ -52,6 +53,7 @@ app.use(
 // Authentication routes
 app.use("/api/auth", authRoutes);
 app.use("/api/profile", profileRoutes);
+app.use("/api/coaches", coachRoutes);
 
 // Existing health-check endpoint
 app.get("/api/health", (req, res) => {
